@@ -68,7 +68,7 @@ bool inicializarDiccionario(vector<string>& diccionario, bool ordennormal)
 }
 
 
-//calculo del puntaje de una palabra
+//calculo del puntaje de una palabra (si es invalida retorna puntaje = -1)
 int puntajePalabra(string palabra)
 {
     if(verificarPalabra(palabra) == false) //!verificarPalabra()
