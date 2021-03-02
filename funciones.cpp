@@ -13,14 +13,17 @@ vector<string> inicializarDiccionario()
 {
     string palabra;
     vector <string> diccionario;
-    int n; cin>>n; //numero de lineas
-    int i = 0;
-    while(i<n)
+    //input file stream object //stream significa transmitir flujo de datos 
+    ifstream file; //ifstream arch("diccionario.txt"); es mas corto
+    file.open("diccionario.txt");
+    
+    if(file.is_open())
     {
-        cin>>palabra;
-        if(verificarPalabra(palabra))
-            diccionario.push_back(palabra);
-        i++;
+        while(file >> palabra) //similar a cin>>palabra solo que lo hacemos desde file
+        {
+            if(verificarPalabra(palabra))
+                diccionario.push_back(palabra);
+        }
     }
     return diccionario;
 }
