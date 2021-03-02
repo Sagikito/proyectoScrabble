@@ -3,9 +3,9 @@
 int main()
 {
     vector<string> diccionario;
-    if(inicializarDiccionario(diccionario))
+    if(inicializarDiccionario(diccionario, true))
     {
         for(string word : diccionario)
-            cout<<word<<"\n";
+            cout<<word<<": "<<puntajePalabra(word)<<"\n";
     }
 }
