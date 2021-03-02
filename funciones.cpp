@@ -9,10 +9,9 @@ bool verificarPalabra(string palabra)
     return valida;
 }
 
-vector<string> inicializarDiccionario()
+bool inicializarDiccionario(vector<string>& diccionario)
 {
     string palabra;
-    vector <string> diccionario;
     //input file stream object //stream significa transmitir flujo de datos 
     ifstream file; //ifstream arch("diccionario.txt"); es mas corto
     file.open("diccionario.txt");
@@ -24,6 +23,8 @@ vector<string> inicializarDiccionario()
             if(verificarPalabra(palabra))
                 diccionario.push_back(palabra);
         }
+        file.close();
+        return true;
     }
-    return diccionario;
+    return false;
 }
